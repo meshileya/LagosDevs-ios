@@ -1,0 +1,34 @@
+PODS:
+  - Alamofire (4.7.3)
+  - Realm (3.19.1):
+    - Realm/Headers (= 3.19.1)
+  - Realm/Headers (3.19.1)
+  - RealmSwift (3.19.1):
+    - Realm (= 3.19.1)
+  - SwiftyJSON (4.3.0)
+  - TTGSnackbar (1.10.5)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7.3)
+  - RealmSwift (~> 3.19.0)
+  - SwiftyJSON (~> 4.0)
+  - TTGSnackbar
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Realm
+    - RealmSwift
+    - SwiftyJSON
+    - TTGSnackbar
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Realm: fb377747e694c7deb62d402400454134fe321bee
+  RealmSwift: 1302b0ab60f3105a2b214a735eeb0938607cf16b
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  TTGSnackbar: 2bd245d2bbf83639483410273fd936af0b7ba2a9
+
+PODFILE CHECKSUM: 5d37b8b648f224df4d9e619d1cb68fca6bf3de5d
+
+COCOAPODS: 1.11.2
