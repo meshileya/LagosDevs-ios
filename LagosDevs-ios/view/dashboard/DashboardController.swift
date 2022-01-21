@@ -11,6 +11,7 @@ import UIKit
 class DashboardController : UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource, ControllerDelegate{
     
     var itemList :[ItemsDto] = []
+    var currentPageNumber = "1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,29 +38,63 @@ class DashboardController : UIViewController, UICollectionViewDelegateFlowLayout
             self.hideProgress()
             self.itemList = localData
             self.collectionView.reloadData()
+            self.currentPageNumber = "\(LocalDb().getCurrentPage() + 1)"
         }else{
             //shows empty state then fetch from server
-            ApiService().fetchUsersAsync(){
-                (result, data, error) in
-                self.hideProgress()
-                if result{
-                    self.itemList = LocalDb().getLocalItemsData()
-                    if self.itemList.count > 0{
-                        self.collectionView.reloadData()
-                    }else{
-                        //show empty state
-                        print("Empty state")
-                    }
-                    
+            fetchRemoteData(1)
+            
+        }
+    }
+    
+    func fetchRemoteData(_ currentPageNumber: Int){
+        ApiService().fetchUsersAsync(pageNumber: "\(currentPageNumber)"){
+            (result, data, error) in
+            self.hideProgress()
+            if result{
+                self.itemList = LocalDb().getLocalItemsData()
+                if self.itemList.count > 0{
+                    self.collectionView.reloadData()
                 }else{
-                    //This is expected to show empty state or displays error from the backend
-                    print("No data available")
+                    //show empty state
+                    print("Empty state")
                 }
                 
+            }else{
+                //This is expected to show empty state or displays error from the backend
+                print("No data available")
             }
+            
         }
+    }
+    
+    private func initRefresh()-> Void {
         
+        let refreshControl = UIRefreshControl()
+        let title = NSLocalizedString("Refreshing...", comment: "Pull to refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: title)
+        refreshControl.tintColor = UIColor.lightGray
+        refreshControl.addTarget(self, action: #selector(refreshOptions(sender:)),
+                                 for: .valueChanged)
+        self.collectionView.refreshControl = refreshControl
+    }
+    
+    @objc private func refreshOptions(sender: UIRefreshControl) {
+        refreshList()
+        sender.endRefreshing()
+    }
+    
+    private func refreshList() {
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == itemList.count - 1 && LocalDb().getTotalItemsNumber() != itemList.count{  //numberofitem count
+                updateNextSet()
+            }
+    }
+
+    func updateNextSet(){
+        fetchRemoteData(LocalDb().getCurrentPage() + 1)
     }
     
     lazy var collectionView : DynamicCollectionView = {
