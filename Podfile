@@ -6,8 +6,9 @@ target 'LagosDevs-ios' do
   use_frameworks!
 
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'RealmSwift', '~> 3.19.0'
 pod 'Alamofire', '~> 4.7.3'
+pod 'Kingfisher', '~> 4.0'
+pod 'RealmSwift', '~> 3.19.0'
 pod 'SwiftyJSON', '~> 4.0'
 pod "TTGSnackbar"
 

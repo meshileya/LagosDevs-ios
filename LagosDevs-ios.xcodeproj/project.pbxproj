@@ -8,14 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		18505402279A24E300CA36EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505401279A24E300CA36EC /* AppDelegate.swift */; };
-		18505404279A24E300CA36EC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505403279A24E300CA36EC /* SceneDelegate.swift */; };
 		18505406279A24E300CA36EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505405279A24E300CA36EC /* ViewController.swift */; };
-		18505409279A24E300CA36EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18505407279A24E300CA36EC /* Main.storyboard */; };
 		1850540B279A24E500CA36EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1850540A279A24E500CA36EC /* Assets.xcassets */; };
 		1850540E279A24E500CA36EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1850540C279A24E500CA36EC /* LaunchScreen.storyboard */; };
 		18505419279A24E500CA36EC /* LagosDevs_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505418279A24E500CA36EC /* LagosDevs_iosTests.swift */; };
 		18505423279A24E600CA36EC /* LagosDevs_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505422279A24E600CA36EC /* LagosDevs_iosUITests.swift */; };
 		18505425279A24E600CA36EC /* LagosDevs_iosUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505424279A24E600CA36EC /* LagosDevs_iosUITestsLaunchTests.swift */; };
+		18505434279AB6AA00CA36EC /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505433279AB6A900CA36EC /* DashboardController.swift */; };
+		18505436279AB95300CA36EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18505435279AB95300CA36EC /* Main.storyboard */; };
+		18505439279AC51400CA36EC /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505438279AC51300CA36EC /* MainResponse.swift */; };
+		1850543B279AC53A00CA36EC /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850543A279AC53A00CA36EC /* Items.swift */; };
+		1850543E279AC7E100CA36EC /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850543D279AC7E100CA36EC /* ApiService.swift */; };
+		18505441279AD33C00CA36EC /* LocalDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505440279AD33C00CA36EC /* LocalDb.swift */; };
+		18505444279AE1E400CA36EC /* DynamicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505443279AE1E400CA36EC /* DynamicCollectionView.swift */; };
+		18505446279AE20F00CA36EC /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505445279AE20F00CA36EC /* UserCell.swift */; };
+		18505448279AEB4200CA36EC /* ControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505447279AEB4200CA36EC /* ControllerDelegate.swift */; };
 		1E87F0CA444F71628300F27A /* Pods_LagosDevs_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE108245FE986B66B57F062 /* Pods_LagosDevs_ios.framework */; };
 		EAE41467CB812D8C34CC78E5 /* Pods_LagosDevs_ios_LagosDevs_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62E08F673A1726B201651B /* Pods_LagosDevs_ios_LagosDevs_iosUITests.framework */; };
 		F4C9ECA13B00AD70D1F78427 /* Pods_LagosDevs_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DBC51BDFB14985E8463E2A /* Pods_LagosDevs_iosTests.framework */; };
@@ -42,9 +49,7 @@
 		130CB818613193FB81A543D9 /* Pods-LagosDevs-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LagosDevs-iosTests.debug.xcconfig"; path = "Target Support Files/Pods-LagosDevs-iosTests/Pods-LagosDevs-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		185053FE279A24E300CA36EC /* LagosDevs-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LagosDevs-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18505401279A24E300CA36EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18505403279A24E300CA36EC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		18505405279A24E300CA36EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		18505408279A24E300CA36EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1850540A279A24E500CA36EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1850540D279A24E500CA36EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1850540F279A24E500CA36EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +58,15 @@
 		1850541E279A24E500CA36EC /* LagosDevs-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LagosDevs-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18505422279A24E600CA36EC /* LagosDevs_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LagosDevs_iosUITests.swift; sourceTree = "<group>"; };
 		18505424279A24E600CA36EC /* LagosDevs_iosUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LagosDevs_iosUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		18505433279AB6A900CA36EC /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		18505435279AB95300CA36EC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		18505438279AC51300CA36EC /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
+		1850543A279AC53A00CA36EC /* Items.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Items.swift; sourceTree = "<group>"; };
+		1850543D279AC7E100CA36EC /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		18505440279AD33C00CA36EC /* LocalDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDb.swift; sourceTree = "<group>"; };
+		18505443279AE1E400CA36EC /* DynamicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionView.swift; sourceTree = "<group>"; };
+		18505445279AE20F00CA36EC /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		18505447279AEB4200CA36EC /* ControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDelegate.swift; sourceTree = "<group>"; };
 		3966F137C79F2C1ADA810F89 /* Pods-LagosDevs-ios-LagosDevs-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LagosDevs-ios-LagosDevs-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-LagosDevs-ios-LagosDevs-iosUITests/Pods-LagosDevs-ios-LagosDevs-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3D62E08F673A1726B201651B /* Pods_LagosDevs_ios_LagosDevs_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LagosDevs_ios_LagosDevs_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BEC5CA60C65EF4D090B06B4 /* Pods-LagosDevs-ios-LagosDevs-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LagosDevs-ios-LagosDevs-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-LagosDevs-ios-LagosDevs-iosUITests/Pods-LagosDevs-ios-LagosDevs-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,10 +130,14 @@
 		18505400279A24E300CA36EC /* LagosDevs-ios */ = {
 			isa = PBXGroup;
 			children = (
+				18505442279AE1C700CA36EC /* common */,
+				1850543F279AD32D00CA36EC /* data-manager */,
+				1850543C279AC7D500CA36EC /* service */,
+				18505431279AB68900CA36EC /* view */,
+				18505437279AB99100CA36EC /* model */,
+				18505435279AB95300CA36EC /* Main.storyboard */,
 				18505401279A24E300CA36EC /* AppDelegate.swift */,
-				18505403279A24E300CA36EC /* SceneDelegate.swift */,
 				18505405279A24E300CA36EC /* ViewController.swift */,
-				18505407279A24E300CA36EC /* Main.storyboard */,
 				1850540A279A24E500CA36EC /* Assets.xcassets */,
 				1850540C279A24E500CA36EC /* LaunchScreen.storyboard */,
 				1850540F279A24E500CA36EC /* Info.plist */,
@@ -144,6 +162,57 @@
 			path = "LagosDevs-iosUITests";
 			sourceTree = "<group>";
 		};
+		18505431279AB68900CA36EC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				18505432279AB69600CA36EC /* dashboard */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		18505432279AB69600CA36EC /* dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				18505433279AB6A900CA36EC /* DashboardController.swift */,
+				18505445279AE20F00CA36EC /* UserCell.swift */,
+			);
+			path = dashboard;
+			sourceTree = "<group>";
+		};
+		18505437279AB99100CA36EC /* model */ = {
+			isa = PBXGroup;
+			children = (
+				18505438279AC51300CA36EC /* MainResponse.swift */,
+				1850543A279AC53A00CA36EC /* Items.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		1850543C279AC7D500CA36EC /* service */ = {
+			isa = PBXGroup;
+			children = (
+				1850543D279AC7E100CA36EC /* ApiService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		1850543F279AD32D00CA36EC /* data-manager */ = {
+			isa = PBXGroup;
+			children = (
+				18505440279AD33C00CA36EC /* LocalDb.swift */,
+			);
+			path = "data-manager";
+			sourceTree = "<group>";
+		};
+		18505442279AE1C700CA36EC /* common */ = {
+			isa = PBXGroup;
+			children = (
+				18505443279AE1E400CA36EC /* DynamicCollectionView.swift */,
+				18505447279AEB4200CA36EC /* ControllerDelegate.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		A0453282E6A22BC13F65E83B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +233,6 @@
 				130CB818613193FB81A543D9 /* Pods-LagosDevs-iosTests.debug.xcconfig */,
 				D3239723527816CA7ACDD1B2 /* Pods-LagosDevs-iosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -277,9 +345,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18505436279AB95300CA36EC /* Main.storyboard in Resources */,
 				1850540E279A24E500CA36EC /* LaunchScreen.storyboard in Resources */,
 				1850540B279A24E500CA36EC /* Assets.xcassets in Resources */,
-				18505409279A24E300CA36EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,9 +475,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18505434279AB6AA00CA36EC /* DashboardController.swift in Sources */,
+				1850543B279AC53A00CA36EC /* Items.swift in Sources */,
+				18505444279AE1E400CA36EC /* DynamicCollectionView.swift in Sources */,
+				1850543E279AC7E100CA36EC /* ApiService.swift in Sources */,
 				18505406279A24E300CA36EC /* ViewController.swift in Sources */,
+				18505446279AE20F00CA36EC /* UserCell.swift in Sources */,
+				18505448279AEB4200CA36EC /* ControllerDelegate.swift in Sources */,
 				18505402279A24E300CA36EC /* AppDelegate.swift in Sources */,
-				18505404279A24E300CA36EC /* SceneDelegate.swift in Sources */,
+				18505439279AC51400CA36EC /* MainResponse.swift in Sources */,
+				18505441279AD33C00CA36EC /* LocalDb.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,14 +521,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		18505407279A24E300CA36EC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18505408279A24E300CA36EC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1850540C279A24E500CA36EC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
