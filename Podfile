@@ -9,7 +9,6 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'Alamofire', '~> 4.7.3'
 pod 'Kingfisher', '~> 4.0'
 pod 'RealmSwift', '~> 3.19.0'
-pod 'SwiftyJSON', '~> 4.0'
 pod "TTGSnackbar"
 
   # Pods for LagosDevs-ios

@@ -6,14 +6,12 @@ PODS:
   - Realm/Headers (3.19.1)
   - RealmSwift (3.19.1):
     - Realm (= 3.19.1)
-  - SwiftyJSON (4.3.0)
   - TTGSnackbar (1.10.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7.3)
   - Kingfisher (~> 4.0)
   - RealmSwift (~> 3.19.0)
-  - SwiftyJSON (~> 4.0)
   - TTGSnackbar
 
 SPEC REPOS:
@@ -22,7 +20,6 @@ SPEC REPOS:
     - Kingfisher
     - Realm
     - RealmSwift
-    - SwiftyJSON
     - TTGSnackbar
 
 SPEC CHECKSUMS:
@@ -30,9 +27,8 @@ SPEC CHECKSUMS:
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   Realm: fb377747e694c7deb62d402400454134fe321bee
   RealmSwift: 1302b0ab60f3105a2b214a735eeb0938607cf16b
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   TTGSnackbar: 2bd245d2bbf83639483410273fd936af0b7ba2a9
 
-PODFILE CHECKSUM: c4b0bf65fd8a463dad4976498bbb0d450016729c
+PODFILE CHECKSUM: b4ca69b4a0b9421e0d0833395a2f206029bc74f8
 
 COCOAPODS: 1.11.2

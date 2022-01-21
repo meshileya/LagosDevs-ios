@@ -11,14 +11,33 @@ import Kingfisher
 
 class UserCell : UICollectionViewCell {
     
-    var item: ItemsDto? {
+    var likesTapAction : (()->())?
+    
+    var openProfileTapAction : ((ItemsFavouriteDto)->())?
+    
+    @objc func onOpenProfileCall() {
+        guard let user = userInfo else {
+            return
+        }
+        openProfileTapAction?(user)
+    }
+    
+    var userInfo: ItemsFavouriteDto? {
         didSet {
-            if let model = item {
-                let url = URL(string: model.avatarurl)
-                textLabel.text = model.name
+            if let model = userInfo {
+                let item = model.item
+                let url = URL(string: item.avatarurl)
+                textLabel.text = item.name
                 //uses the default avatar ic_avatar if url is nil
                 profileImageView.kf.setImage(with: url, placeholder: UIImage(named: "ic_avatar"))
+                
+                if model.isFavourite{
+                    favouriteImageView.image = UIImage(named: "ic_favourite_selected")
+                }else{
+                    favouriteImageView.image = UIImage(named: "ic_favourite_not_selected")
+                }
             }
+            
         }
     }
     
@@ -44,10 +63,23 @@ class UserCell : UICollectionViewCell {
         return imageView
     }()
     
+    let favouriteImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "ic_favourite_not_selected")
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        imageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         initializeView()
+        favouriteImageView.isUserInteractionEnabled = true
+        favouriteImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onOpenProfileCall)))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -66,10 +98,13 @@ class UserCell : UICollectionViewCell {
         //Adds views to cell
         addSubview(textLabel)
         addSubview(profileImageView)
+        addSubview(favouriteImageView)
         
         profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
         profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
+        favouriteImageView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10).isActive = true
+        favouriteImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         
         textLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 10).isActive = true
         textLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true

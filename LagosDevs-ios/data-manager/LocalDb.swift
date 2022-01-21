@@ -9,12 +9,46 @@ import Foundation
 import RealmSwift
 
 class LocalDb{
-    
     let PAGE_NUMBER = "pageNumber"
     let TOTAL_COUNT = "totalCount"
     
+    let realm = try! Realm()
+    lazy var itemsDto: Results<ItemsDto> = { self.realm.objects(ItemsDto.self) }()
+    
+    func addToLocalFavourite(userDto: ItemsDto){
+        try! self.realm.write(){
+            let data = FavouritesDto()
+            data.id = "\(userDto.id)"
+            data.url = userDto.url
+            data.name = userDto.name
+            data.gravatarId = userDto.gravatarId
+            data.avatarurl = userDto.avatarurl
+            
+            self.realm.add(data)
+        }
+    }
+    
+    func deleteLocalFavourite(id: String){
+        do {
+            let realm = try Realm()
+            
+            if let obj = realm.objects(FavouritesDto.self).filter("id = %@", id).first {
+                try! realm.write {
+                    realm.delete(obj)
+                }
+            }
+            
+        } catch let error {
+            print("error - \(error.localizedDescription)")
+        }
+    }
+    
     func getLocalItemsData() -> [ItemsDto]{
-        return try! Realm().objects(ItemsDto.self).toArray()
+        return try! Realm().objects(ItemsDto.self).toArray().sorted { $0.name.lowercased() < $1.name.lowercased() }
+    }
+    
+    func getFavouritetemsData() -> [FavouritesDto]{
+        return try! Realm().objects(FavouritesDto.self).toArray().sorted { $0.name.lowercased() < $1.name.lowercased() }
     }
     
     func saveCurrentPage (pageNumber:String){
@@ -38,8 +72,8 @@ class LocalDb{
 
 extension Results {
     func toArray() -> [Element] {
-      return compactMap {
-        $0
-      }
+        return compactMap {
+            $0
+        }
     }
- }
+}

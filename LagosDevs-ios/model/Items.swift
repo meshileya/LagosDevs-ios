@@ -117,3 +117,8 @@ class FavouritesDto: Object {
     @objc dynamic var avatarurl = ""
 }
 
+struct ItemsFavouriteDto{
+    let isFavourite: Bool
+    let item : ItemsDto
+}
+

@@ -23,6 +23,11 @@
 		18505444279AE1E400CA36EC /* DynamicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505443279AE1E400CA36EC /* DynamicCollectionView.swift */; };
 		18505446279AE20F00CA36EC /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505445279AE20F00CA36EC /* UserCell.swift */; };
 		18505448279AEB4200CA36EC /* ControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505447279AEB4200CA36EC /* ControllerDelegate.swift */; };
+		1850544A279B003400CA36EC /* UserInfoDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505449279B003400CA36EC /* UserInfoDto.swift */; };
+		1850544D279B018900CA36EC /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850544C279B018900CA36EC /* UserProfileController.swift */; };
+		1850544F279B26E600CA36EC /* FavouriteUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850544E279B26E600CA36EC /* FavouriteUserCell.swift */; };
+		18505451279B3C9500CA36EC /* DashboardController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505450279B3C9500CA36EC /* DashboardController+Extension.swift */; };
+		18505454279B3DF900CA36EC /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18505453279B3DF900CA36EC /* UserInfoViewModel.swift */; };
 		1E87F0CA444F71628300F27A /* Pods_LagosDevs_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE108245FE986B66B57F062 /* Pods_LagosDevs_ios.framework */; };
 		EAE41467CB812D8C34CC78E5 /* Pods_LagosDevs_ios_LagosDevs_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D62E08F673A1726B201651B /* Pods_LagosDevs_ios_LagosDevs_iosUITests.framework */; };
 		F4C9ECA13B00AD70D1F78427 /* Pods_LagosDevs_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DBC51BDFB14985E8463E2A /* Pods_LagosDevs_iosTests.framework */; };
@@ -67,6 +72,11 @@
 		18505443279AE1E400CA36EC /* DynamicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCollectionView.swift; sourceTree = "<group>"; };
 		18505445279AE20F00CA36EC /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		18505447279AEB4200CA36EC /* ControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerDelegate.swift; sourceTree = "<group>"; };
+		18505449279B003400CA36EC /* UserInfoDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoDto.swift; sourceTree = "<group>"; };
+		1850544C279B018900CA36EC /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
+		1850544E279B26E600CA36EC /* FavouriteUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteUserCell.swift; sourceTree = "<group>"; };
+		18505450279B3C9500CA36EC /* DashboardController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DashboardController+Extension.swift"; sourceTree = "<group>"; };
+		18505453279B3DF900CA36EC /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		3966F137C79F2C1ADA810F89 /* Pods-LagosDevs-ios-LagosDevs-iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LagosDevs-ios-LagosDevs-iosUITests.release.xcconfig"; path = "Target Support Files/Pods-LagosDevs-ios-LagosDevs-iosUITests/Pods-LagosDevs-ios-LagosDevs-iosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		3D62E08F673A1726B201651B /* Pods_LagosDevs_ios_LagosDevs_iosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LagosDevs_ios_LagosDevs_iosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BEC5CA60C65EF4D090B06B4 /* Pods-LagosDevs-ios-LagosDevs-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LagosDevs-ios-LagosDevs-iosUITests.debug.xcconfig"; path = "Target Support Files/Pods-LagosDevs-ios-LagosDevs-iosUITests/Pods-LagosDevs-ios-LagosDevs-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -130,9 +140,10 @@
 		18505400279A24E300CA36EC /* LagosDevs-ios */ = {
 			isa = PBXGroup;
 			children = (
+				18505452279B3DD500CA36EC /* viewmodel */,
 				18505442279AE1C700CA36EC /* common */,
 				1850543F279AD32D00CA36EC /* data-manager */,
-				1850543C279AC7D500CA36EC /* service */,
+				1850543C279AC7D500CA36EC /* repository */,
 				18505431279AB68900CA36EC /* view */,
 				18505437279AB99100CA36EC /* model */,
 				18505435279AB95300CA36EC /* Main.storyboard */,
@@ -165,6 +176,7 @@
 		18505431279AB68900CA36EC /* view */ = {
 			isa = PBXGroup;
 			children = (
+				1850544B279B017B00CA36EC /* profile */,
 				18505432279AB69600CA36EC /* dashboard */,
 			);
 			path = view;
@@ -175,6 +187,8 @@
 			children = (
 				18505433279AB6A900CA36EC /* DashboardController.swift */,
 				18505445279AE20F00CA36EC /* UserCell.swift */,
+				1850544E279B26E600CA36EC /* FavouriteUserCell.swift */,
+				18505450279B3C9500CA36EC /* DashboardController+Extension.swift */,
 			);
 			path = dashboard;
 			sourceTree = "<group>";
@@ -184,16 +198,17 @@
 			children = (
 				18505438279AC51300CA36EC /* MainResponse.swift */,
 				1850543A279AC53A00CA36EC /* Items.swift */,
+				18505449279B003400CA36EC /* UserInfoDto.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
 		};
-		1850543C279AC7D500CA36EC /* service */ = {
+		1850543C279AC7D500CA36EC /* repository */ = {
 			isa = PBXGroup;
 			children = (
 				1850543D279AC7E100CA36EC /* ApiService.swift */,
 			);
-			path = service;
+			path = repository;
 			sourceTree = "<group>";
 		};
 		1850543F279AD32D00CA36EC /* data-manager */ = {
@@ -211,6 +226,22 @@
 				18505447279AEB4200CA36EC /* ControllerDelegate.swift */,
 			);
 			path = common;
+			sourceTree = "<group>";
+		};
+		1850544B279B017B00CA36EC /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				1850544C279B018900CA36EC /* UserProfileController.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		18505452279B3DD500CA36EC /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				18505453279B3DF900CA36EC /* UserInfoViewModel.swift */,
+			);
+			path = viewmodel;
 			sourceTree = "<group>";
 		};
 		A0453282E6A22BC13F65E83B /* Frameworks */ = {
@@ -475,7 +506,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1850544A279B003400CA36EC /* UserInfoDto.swift in Sources */,
 				18505434279AB6AA00CA36EC /* DashboardController.swift in Sources */,
+				18505454279B3DF900CA36EC /* UserInfoViewModel.swift in Sources */,
+				1850544D279B018900CA36EC /* UserProfileController.swift in Sources */,
 				1850543B279AC53A00CA36EC /* Items.swift in Sources */,
 				18505444279AE1E400CA36EC /* DynamicCollectionView.swift in Sources */,
 				1850543E279AC7E100CA36EC /* ApiService.swift in Sources */,
@@ -483,6 +517,8 @@
 				18505446279AE20F00CA36EC /* UserCell.swift in Sources */,
 				18505448279AEB4200CA36EC /* ControllerDelegate.swift in Sources */,
 				18505402279A24E300CA36EC /* AppDelegate.swift in Sources */,
+				18505451279B3C9500CA36EC /* DashboardController+Extension.swift in Sources */,
+				1850544F279B26E600CA36EC /* FavouriteUserCell.swift in Sources */,
 				18505439279AC51400CA36EC /* MainResponse.swift in Sources */,
 				18505441279AD33C00CA36EC /* LocalDb.swift in Sources */,
 			);
@@ -663,6 +699,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -691,6 +728,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
