@@ -25,10 +25,16 @@ class DashboardController : UIViewController, ControllerDelegate{
     }
     
     func initViews(){
+        
         view.addSubview(generalStackView)
+        view.addSubview(clearAllImageView)
         view.addSubview(collectionView)
         
         //Adding constraints to views --METHOD 1
+        
+        clearAllImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 25).isActive = true
+        clearAllImageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10).isActive = true
+        
         generalStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
         generalStackView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         generalStackView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
@@ -81,7 +87,7 @@ class DashboardController : UIViewController, ControllerDelegate{
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == itemList.count - 1 && LocalDb().getTotalItemsNumber() != itemList.count{  //numberofitem count
+        if indexPath.row == itemList.count - 1 && LocalDb().getTotalItemsNumber() <= itemList.count{  //numberofitem count
             updateNextSet()
         }
     }
@@ -102,6 +108,17 @@ class DashboardController : UIViewController, ControllerDelegate{
         collectionView.contentInsetAdjustmentBehavior = .always
         collectionView.register(UserCell.self, forCellWithReuseIdentifier: "cellId")
         return collectionView
+    }()
+    
+    let clearAllImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "ic_clear_all")
+        imageView.layer.masksToBounds = true
+        imageView.contentMode = .scaleAspectFit
+        imageView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     lazy var favouriteEmptyStateLabel : UILabel = {

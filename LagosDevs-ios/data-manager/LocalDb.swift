@@ -12,11 +12,9 @@ class LocalDb{
     let PAGE_NUMBER = "pageNumber"
     let TOTAL_COUNT = "totalCount"
     
-    let realm = try! Realm()
-    lazy var itemsDto: Results<ItemsDto> = { self.realm.objects(ItemsDto.self) }()
-    
     func addToLocalFavourite(userDto: ItemsDto){
-        try! self.realm.write(){
+        let realm = try! Realm()
+        try! realm.write(){
             let data = FavouritesDto()
             data.id = "\(userDto.id)"
             data.url = userDto.url
@@ -24,7 +22,7 @@ class LocalDb{
             data.gravatarId = userDto.gravatarId
             data.avatarurl = userDto.avatarurl
             
-            self.realm.add(data)
+            realm.add(data)
         }
     }
     
@@ -40,6 +38,15 @@ class LocalDb{
             
         } catch let error {
             print("error - \(error.localizedDescription)")
+        }
+    }
+    
+    func deleteAllFavourites(){
+        let realm = try! Realm()
+        let allFavouriteObjects = realm.objects(FavouritesDto.self)
+
+        try! realm.write {
+            realm.delete(allFavouriteObjects)
         }
     }
     

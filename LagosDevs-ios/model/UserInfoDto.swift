@@ -8,7 +8,7 @@
 import Foundation
 
 struct UserInfoDto: Codable {
-
+    
     let login: String?
     let id: Int?
     let nodeId: String?
@@ -41,7 +41,7 @@ struct UserInfoDto: Codable {
     let following: Int?
     let createdAt: String?
     let updatedAt: String?
-
+    
     private enum CodingKeys: String, CodingKey {
         case login = "login"
         case id = "id"
@@ -76,7 +76,7 @@ struct UserInfoDto: Codable {
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }
-
+    
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         login = try values.decodeIfPresent(String.self, forKey: .login)
@@ -112,7 +112,7 @@ struct UserInfoDto: Codable {
         createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
         updatedAt = try values.decodeIfPresent(String.self, forKey: .updatedAt)
     }
-
+    
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(login, forKey: .login)
@@ -148,5 +148,5 @@ struct UserInfoDto: Codable {
         try container.encode(createdAt, forKey: .createdAt)
         try container.encode(updatedAt, forKey: .updatedAt)
     }
-
+    
 }

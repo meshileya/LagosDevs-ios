@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class Items: Codable {
-
+    
     @objc dynamic var login: String = ""
     @objc dynamic let id: Int
     @objc dynamic let nodeId: String
@@ -29,7 +29,7 @@ class Items: Codable {
     @objc dynamic let type: String
     @objc dynamic let siteAdmin: Bool
     @objc dynamic let score: Int
-
+    
     private enum CodingKeys: String, CodingKey {
         case login = "login"
         case id = "id"
@@ -51,7 +51,7 @@ class Items: Codable {
         case siteAdmin = "site_admin"
         case score = "score"
     }
-
+    
     required init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         login = try values.decode(String.self, forKey: .login)
@@ -97,7 +97,7 @@ class Items: Codable {
         try container.encode(siteAdmin, forKey: .siteAdmin)
         try container.encode(score, forKey: .score)
     }
-
+    
 }
 
 class ItemsDto: Object {

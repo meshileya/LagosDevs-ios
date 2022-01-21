@@ -54,8 +54,6 @@ extension DashboardController : UICollectionViewDelegateFlowLayout, UICollection
             cell.item = favouriteItemList[indexPath.item]
             return cell
         }
-        
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -91,6 +89,7 @@ extension DashboardController : UICollectionViewDelegateFlowLayout, UICollection
             self.favouriteUserCollectionView.isHidden = false
             self.favouriteUserCollectionView.reloadData()
         }else{
+            self.clearAllImageView.isHidden = true
             self.favouriteEmptyStateLabel.isHidden = false
             self.favouriteUserCollectionView.isHidden = true
         }
@@ -103,8 +102,23 @@ extension DashboardController : UICollectionViewDelegateFlowLayout, UICollection
         }else{
             //shows empty state then fetch from server
             fetchRemoteData(1)
-            
         }
+        
+        self.clearAllImageView.isUserInteractionEnabled = true
+        self.clearAllImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onClearFavouritesCall)))
+    }
+    
+    @objc func onClearFavouritesCall(){
+        self.showAlertWithTwoOptions(title: "Delete all Favourites", message: "Are you sure you want to clear your favourite list?", firstActionLabel: "OK", firstAction: { (action) in
+            
+            self.localDb.deleteAllFavourites()
+            self.initData()
+            
+        }, secondAction: {
+            (action) in
+            
+        })
+        
     }
     
     func onCallUserInfo(selectedUserUrl: String){
