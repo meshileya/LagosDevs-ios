@@ -1,0 +1,6 @@
+framework module Pods_LagosDevs_ios {
+  umbrella header "Pods-LagosDevs-ios-umbrella.h"
+
+  export *
+  module * { export * }
+}
